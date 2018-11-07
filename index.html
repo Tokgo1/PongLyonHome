@@ -1,0 +1,274 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Foundation for Sites</title>
+		<link rel="stylesheet" href="css/foundation.css">
+		<link rel="stylesheet" href="css/app.css">
+		<!--<link rel="stylesheet" href="C:/Users/Liang/Desktop/Obama/custom.css">-->
+
+		<style>
+			#menu_bar {
+				height: 100%;
+				width: 19%;
+				z-index: 1;
+				margin-right: 1%;
+				background:#fff;
+			}
+			
+			#menu_foot {
+				position: absolute;
+				top: 70%;
+			}
+			
+			.menu_bar-primary--active {
+				width: 20px;
+			}
+			
+			.homepage__panel {
+				width: 95%;
+				/*height: 45%;*/
+				height: 600px;
+				display: -webkit-box;
+				/*background-size:auto;*/
+				background-size: 100% 100%;
+				display: flex;
+				overflow: hidden;
+				position: absolute;
+				z-index: -1;
+				float: left;
+				margin-bottom: -50px;
+				/*right: 100px;*/
+			}
+			
+			#main-content {
+				box-sizing: inherit;
+				vertical-align: middle;
+				padding: 5% 0;
+				height: auto;
+				<!-- padding-top: 0px;
+				-->display: -webkit-flex;
+				display: flex;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-justify-content: center;
+			}
+			
+			.mod-timeline {
+				/*max-width:75rem;
+				margin-left:auto;
+				margin-right:;*/
+				margin: 0 20px;
+				margin: 0 1.25rem;
+				clear: both
+			}
+			
+			.timeline {
+				max-width: 600px;
+				margin: 0 auto 25px;
+			}
+			
+			.timeline:after {
+				width: 2px;
+				left: 50%;
+				position: relative;
+				margin-left: -1px;
+				margin-left: -.0625rem;
+				top: -25px;
+				top: -1.5625rem;
+				z-index: -1;
+				bottom: -25px;
+				background: #f6f8f8;
+				content: ""
+			}
+			
+			.timeline .tl-moment {
+				margin: 25px 0;
+				margin: 1.5625rem 0;
+				/*width: 100%;*/
+				background: #f6f8f8;
+				transition: opacity .5s ease-in;
+				z-index: 2;
+				min-width: 300px;
+				min-width: 18.75rem
+			}
+			
+			.timeline .tl-moment .wrapper {
+				padding: 30px;
+			}
+			
+			.timeline h2.date {
+				font-size: 18px;
+				font-size: 1.125rem;
+				text-transform: none;
+				font-weight: 400!important;
+				margin-bottom: 8px!important;
+				margin-bottom: .5rem!important;
+				margin-top: 0;
+				font-family: gotham ssm a, gotham ssm b, helvetica neue, Helvetica, Arial, sans-serif
+			}
+			
+			#content {
+				position: relative;
+				margin-left: auto;
+				width: 95%;
+				top: 300px;
+				float: left;
+				clear: both;
+				margin-right: auto
+			}
+			
+			#content::after,
+			#content::before {
+				content: ' ';
+				display: table
+			}
+			
+			.homepage {
+				box-sizing: border-box;
+			}
+			
+			.homepage #content {
+				clear: both
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div>
+			<div id="menu_bar" role="navigation" style="float: right;">
+				<div class="logo">
+					<a class="site-logo" href="">小伙子</a>
+				</div>
+				<div width="100%">
+					<ul class="vertical menu" data-responsive-menu="drilldown medium-accordion">
+						<li role="item1">
+							<a href="#">Item 1</a>
+							<ul class="vertical menu">
+								<li>
+									<a href="#">Item 1A</a>
+									<ul class="vertical menu">
+										<li>
+											<a href="#">Item 1A</a>
+										</li>
+										<li>
+											<a href="#">Item 1B</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Item 1B</a>
+								</li>
+							</ul>
+						</li>
+						<li role="item2">
+							<a href="#">Item 2</a>
+							<ul class="vertical menu">
+								<li>
+									<a href="#">Item 2A</a>
+								</li>
+								<li>
+									<a href="#">Item 2B</a>
+								</li>
+							</ul>
+						</li>
+						<li role="item2">
+							<a href="#">Item 3</a>
+							<ul class="vertical menu">
+								<li>
+									<a href="#">Item 3A</a>
+								</li>
+								<li>
+									<a href="#">Item 3B</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<input class="widget-signup__input" type="email" id="email" name="email" placeholder="Email" required>
+				<input class="widget-signup__input" type="password" id="email" name="email" placeholder="Password" required>
+				<input type="submit" class="widget-signup__submit" name="submit-btn" value="Sign in">
+				<input type="submit" class="widget-signup__submit" name="submit-btn" value="Sign up">
+				<div>
+					<a slot="guide-links-primary" href="//www.youtube.com/yt/about/zh-CN/">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">关于</font>
+						</font>
+					</a>
+					<a slot="guide-links-primary" href="//www.youtube.com/yt/copyright/zh-CN/">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">版权</font>
+						</font>
+					</a>
+
+					<a slot="guide-links-primary" href="//www.youtube.com/yt/dev/zh-CN/">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">开发者</font>
+						</font>
+					</a>
+				</div>
+
+				<div id="menu_foot">
+					<a href="http://www.miitbeian.gov.cn">粤ICP备18046919号-1</a>
+				</div>
+			</div>
+
+			<div id="main-content" role="section">
+				<!--<div class="box-sizing">-->
+				<div class="homepage__panel" style="background-image: url(C:/Users/Liang/Desktop/timg.jpg);">
+				</div>
+				<!--</div>-->
+				<div id="content">
+					<!--<section class="mod-timeline">-->
+					<div class="timeline" style="position: relative">
+
+						<div class="tl-moment" style="position: absolute; left: 0px; top: 0px;">
+							<div class="wrapper">
+								<h2 class="date">2018，07，11</h2>
+								<h3><a href="#">GIT使用</a></h3>
+								<p class="p1">git checkout -b filling-in-layout
+									<br /> git add . <br /> git commit -m "finish" <br /> git merge filling-in-layout <br /> git push
+									<a href="#">查看更多</a>
+								</p>
+							</div>
+						</div>
+
+						<div class="tl-moment" style="position: absolute; left: 547.976px; top: 0px;">
+							<div class="wrapper">
+								<h2 class="date">2018，07，11</h2>
+								<h3><a href="#">GIT使用</a></h3>
+								<p class="p1">git checkout -b filling-in-layout
+									<br /> git add . <br /> git commit -m "finish" <br /> git merge filling-in-layout <br /> git push
+									<a href="#">查看更多</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<!--</section>-->
+				</div>
+			</div>
+
+		</div>
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/vendor/what-input.js"></script>
+		<script src="js/vendor/foundation.js"></script>
+		<script src="js/app.js"></script>
+		<script>
+			$(function() {
+//				$("#menu_bar").hover(function() {
+//						$(this).addClass("menu_bar-primary--active");
+//					},
+//					function() {
+//						$(this).removeClass('menu_bar-primary--active');
+//
+//					})
+			})
+		</script>
+
+	</body>
+
+</html>

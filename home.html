@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" type="image/x-icon" href="img/p.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Welcome to the PongLyon Blog</title>
+		<link rel="stylesheet" href="css/foundation.css">
+		<link rel="stylesheet" href="css/app.css">
+		<script src="js/vendor/jquery.js "></script>
+		<style>
+			.home_logo {
+				width: 100%;
+				height: 95px;
+				background-image: url(img/ponglyonblog.svg);
+				display: block;
+				text-indent: -10px;
+				background-repeat: no-repeat;
+				background-size: 225px 240px;
+				/*background-origin: content-box;*/
+			}
+			
+			.menu {
+				float: right;
+				width: 5%;
+				display: block;
+				height: 100vh;
+				/*20%*/
+				/*width: 60px;*/
+				/*width: 3.75rem;*/
+				position: fixed;
+				right: 0;
+				top: 0;
+				background: #fff;
+				box-shadow: 1px 0 4px 0 rgba(0, 0, 0, .25);
+				box-shadow: .0625rem 0 .25rem 0 rgba(0, 0, 0, .25);
+				z-index: 50000;
+				overflow: hidden;
+				transition: width .2s ease
+			}
+			
+			.nav-primary--active {
+				width: 20%;
+			}
+			
+			.content {
+				width: 85%;
+				padding: 0;
+			}
+			
+			.homepae_panel {
+				height: 600px;
+				width: 100%;
+				background: url(img/psb.jpg);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				-webkit-background-origin: content-box;
+				/* Safari */
+				background-origin: content-box;
+			}
+			
+			.timeline {
+				text-align: center;
+				/*columns: 2;*/
+				margin: 0 auto 25px;
+				clear: both;
+				/*line-height: 1.59;*/
+			}
+			
+			.timeline:after {
+				background: #f6f8f8;
+				top: 0;
+				content: ""
+			}
+			
+			.timeline .tl-moment:after {
+				top: 3.4375rem;
+				height: .125rem;
+				position: absolute
+			}
+			
+			.tl-moment {
+				display: block;
+				left: -12.5%;
+				background: #f6f8f8;
+				top: 55px;
+				content: "";
+				margin: 2rem 0;
+				float: left;
+				background: #f6f8f8;
+				z-index: 2;
+				width: 40%;
+			}
+			
+			
+			.timeline .tl-moment .wrapper {
+				padding: 30px;
+			}
+			
+			.item--top-type {
+				display: block;
+				width: 20%;
+				white-space: nowrap;
+				border-top: 2px solid #dfe4e4;
+				border-top: .125rem solid #dfe4e4;
+				position: relative;
+				transition: all .1s linear;
+				position: relative;
+				letter-spacing: -.5px;
+				letter-spacing: -.0313rem
+			}
+			
+			.nav-primary__logo {
+				padding: 10px 10px;
+				display: block;
+			}
+			
+			.item--top-last-type {
+				border-bottom: 2px solid #dfe4e4;
+				border-bottom: .125rem solid #dfe4e4
+			}
+			
+			.widget-signup__submit {
+				width: calc(50% - 16px);
+				margin: 0;
+				padding: 12px 5px 10px;
+				padding: .75rem .3125rem .625rem;
+				background-color: #dfe4e4;
+				border-radius: .5rem;
+				background: -moz-linear-gradient(top, ＃FFC3C8, ＃FF9298);
+				cursor: pointer;
+				color: #111
+			}
+			
+			.widget-signup__submit:hover {
+				-webkit-animation: colorchange .9s 1;
+				animation: colorchange .9s 1;
+				background-color: #2a2970
+			}
+			
+			.widget-signup {
+				margin: 30px 0 50px;
+				margin: 1.875rem 0 3.125rem;
+				margin-left: 1.25rem;
+				visibility: hidden;
+			}
+			
+			.nav-primary--active.widget-signup {
+				opacity: 1;
+				transition: opacity .1s linear;
+				transition-delay: .15s
+			}
+			
+			.widget-signup__header {
+				font-family: gotham narrow ssm a, gotham narrow ssm b, helvetica neue, Helvetica, Arial, sans-serif;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 17px;
+			}
+			
+			.widget-signup__input {
+				font-size: 13px;
+				border: .0625rem solid #cacaca;
+				margin: 1px 0px 1px 0px;
+				font-size: .8125rem;
+			}
+			
+			.homepage__content {
+				padding-right: 15%;
+				padding-left: 10%;
+				-ms-flex-item-align: center;
+				align-self: center;
+				position: absolute;
+				top: 35%;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%)
+			}
+			
+			.homepage__logo--white {
+				height: 72px;
+				width: 72px;
+				background-image: url(img/log_home.svg);
+				
+				display:block;
+
+				background-repeat:no-repeat;
+				background-size:100%;
+				
+				background-position:center;
+				margin:0 auto;
+				z-index:1;
+				top:0
+			}
+			
+			.homepage__headline {
+				font-family: gotham narrow ssm a, gotham narrow ssm b, helvetica neue, Helvetica, Arial, sans-serif;
+				font-size: 49px;
+				transition: color .75s linear;
+				color: #fff;
+				text-transform: uppercase;
+				line-height: 1.25;
+				font-weight: 800;
+				margin-top: 8px;
+				padding: 0 20px;
+				margin-top:.625rem;
+				text-align: center;
+			}
+			
+			.homepage__action {
+				font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+				text-align: center;
+				color: #fff;
+			}
+			
+			@keyframes colorchange {
+				0% {
+					background-color: #009ee3
+				}
+				40% {
+					background-color: #6bb8ab
+				}
+				75% {
+					background-color: #bfe6ad
+				}
+				100% {
+					background-color: #2a2970
+				}
+			}
+			
+			.nav-utility__menu {
+				columns: 2;
+				list-style-type: none;
+				visibility: hidden
+			}
+			
+			.nav-utility__link {
+				display: inline-block;
+				width: 100%;
+				color: #4d4d4d;
+				font-size: 13px;
+				line-height: 3;
+				text-decoration: none
+			}
+			
+			.vertical {
+				width: 100%;
+			}
+			
+			ul {
+				margin-left: 0;
+			}
+			.menu_text{
+				
+				opacity: 0;
+			}
+			.menu.nav-primary--active .menu_text{
+				opacity: 1;
+				transition: opacity .1s linear;
+				transition-delay: .15s
+			}
+			.mod-timeline {
+				width:50%;
+				margin-left: auto;
+				margin-right: auto;
+				overflow: hidden;
+			}
+			.mod-timeline:after{
+				width:2px;
+				left:45%;
+				top: 600px;
+				position:absolute;
+				margin-left:-1px;
+				z-index:-1;
+				bottom:-25px;
+				background:#f6f8f8;
+				content:""
+			}
+			.text_margin-left {
+				margin-left: 5rem;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".menu").hover(function() {
+					$(".menu").addClass("nav-primary--active");
+
+					var av = $(".nav-utility__menu");
+					for(var k = 0; k < av.length; k++) {
+						av[k].style.visibility = 'visible';
+					}
+
+					var av = $(".widget-signup");
+					for(var k = 0; k < av.length; k++) {
+						av[k].style.visibility = 'visible';
+					}
+
+				}, function() {
+					$(".menu").removeClass("nav-primary--active")
+					var av = $(".nav-utility__menu");
+					for(var k = 0; k < av.length; k++) {
+						av[k].style.visibility = 'hidden';
+					}
+
+					var av = $(".widget-signup");
+					for(var k = 0; k < av.length; k++) {
+						av[k].style.visibility = 'hidden';
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<!--此页面模仿OBaMa官网， 很喜欢就copy下来了。https://www.obama.org/ -->
+		<div>
+			<div class="menu">
+				<ul class="vertical" data-responsive-menu="drilldown medium-accordion">
+					<li role="item1" class="nav-primary__logo">
+
+						<a class="home_logo" href=""></a>
+					</li>
+					<li role="item2" class="item--top-type">
+						<a href="#" class="menu_text">软件</a>
+					</li>
+					<li role="item3" class="item--top-type">
+						<a href="#" class="menu_text">日志</a>
+						<ul class="vertical">
+							<li style="display: block;">
+								<a href="" >写日志</a>
+							</li>
+						</ul>
+					</li>
+					<li role="item4" class="item--top-type">
+						<a href="#" class="menu_text">相册</a>
+					</li>
+					<li role="item5" class="item--top-type item--top-last-type">
+						<a href="#" class="menu_text">音乐</a>
+					</li>
+				</ul>
+				
+				<div class="widget-signup">
+					<h1 class="widget-signup__header">Join Me</h1>
+					<form class="widget-signup__form" id="signup" name="signup" method="post" action="#">
+
+						<input class="widget-signup__input" style="margin-bottom: 1rem;" type="email" id="email" placeholder="Email" required="">
+						<input class="widget-signup__input" style="margin-bottom: 1rem;" type="text" id="place" placeholder="ZIP Code" required="" autocomplete="off">
+
+						<input type="submit" class="widget-signup__submit" value="Sign up">
+
+					</form>
+				</div>
+
+				<div class="nav-utility__menu">
+					<ul>
+						<li>
+							<a class="nav-utility__link" href="">关于</a>
+						</li>
+						<li>
+
+							<a class="nav-utility__link" href="http://www.miitbeian.gov.cn ">粤ICP备18046919号-1</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<table style="width:95%; float: left;" border="0">
+				<tr>
+					<td class="content" colspan="1">
+						<div class="homepae_panel"></div>
+
+						<div class="homepage__content">
+							<div class="homepage__logo--wrapper">
+								
+								<div class="homepage__logo--white"></div>
+							</div>
+
+							<h1 class="homepage__headline">梦想的内容与现实之间是有关联的，梦想改变着现实，现实生活也在不断改变着梦想。</h1>
+							<div class="homepage__action">
+								<p class="homepage__attribution"> – PongLyon, 2018</p>
+							</div>
+						</div>
+						
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						<div class="mod-timeline">
+							<div></div>
+							<div class="tl-moment">
+							<a href=""><img src="https://www.obama.org/wp-content/uploads/OF051718CD_9054_2-640x0-c-default.jpg" alt="2019 Obama Foundation Fellowship Applications Open Now! "></a>
+							<div class="wrapper">
+								<h2 class="date">August 21, 2018</h2>
+								<h3><a href="">2019 Obama Foundation Fellowship Applications Open
+                    Now! </a></h3>
+								<p>Applications for the 2019 Fellows class are now open. We’re looking for 20 rising stars from around the world who are working alongside their communities to solve important public problems in creative and powerful ways.
+									<a href="">Learn more here +</a>
+								</p>
+							</div>
+						</div>
+						
+							<div class="tl-moment text_margin-left" >
+								<p class="caption">Using his artwork as a celebration of the human spirit and as an example of the positivity that can arise from adversity, Antonio Davis inspires children in his community to contribute in unique, meaningful ways.</p>
+							</div>
+							
+							<div class="tl-moment text_margin-left" style=" left: 550px; margin-top: 30px;">
+								<a href="">
+									<video muted="" autoplay="" loop="" style="max-width: 100%; display: block;" src=""></video>
+								</a>
+								<div class="wrapper caption">
+									<h3><a href="">Explore the Obama Foundation annual report for 2017</a></h3>
+									<p>Read our story and take a look at how you’ve helped us write it.
+										<a href="">See where we've been and where we're headed.</a>
+									</p>
+								</div>
+							</div>
+							
+						</div>
+						
+					</td>
+					<!--<td style="width: 200px;"></td>-->
+				</tr>
+			</table>
+
+		</div>
+
+		<script src="js/vendor/what-input.js "></script>
+		<script src="js/vendor/foundation.js "></script>
+		<script src="js/app.js "></script>
+	</body>
+
+</html>
