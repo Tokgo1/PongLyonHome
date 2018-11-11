@@ -1,0 +1,41 @@
+.area-operation {
+	background: #fcfcfc;
+	border: 1px solid #ddd;
+	padding: 5px;
+	-webkit-padding: 10px;
+	-moz-padding: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	box-shadow: 4px 4px 10px rgba(0,0,0,.1);
+	margin-bottom: 20px
+}
+.placeholder {
+	border: 2px dashed #dadada;
+	text-align: center;
+	color: #999;
+	font-size: 18px;
+	position: relative;
+	padding: 20px 0;
+	border-radius: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px
+}
+.webuploader-container {
+	position: relative;
+	*margin-bottom: 10px
+}
+.webuploader-pick {
+	height: 44px;
+	line-height: 44px;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	background: #278ff0;
+	border: solid 1px #217ed5;
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-right: 10px
+}
